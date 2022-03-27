@@ -21,3 +21,11 @@ const elc = (item) => {
   }
   localStorage.setItem("checka", JSON.stringify(db));
 };
+const removeItem = (item) => {
+  const existing = localStorage.getItem("checka");
+  if (existing) {
+    const obj = JSON.parse(existing);
+    delete obj[item];
+    localStorage.setItem("checka", JSON.stringify(obj));
+  }
+};
